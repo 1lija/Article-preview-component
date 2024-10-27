@@ -1,0 +1,135 @@
+$veryGrayishBlue: hsl( 217, 19%, 35%);
+$darkBlue: hsl(214, 17%, 51%);
+$grayishBlue: hsl(212, 23%, 69%);
+$lightGrayishBlue: hsl(210, 46%, 95%);
+
+@function rem($value){
+@return ($value/16)*1rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: $lightGrayishBlue;
+}
+
+main{
+    width: 90%;
+    height: rem(400);
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+
+    
+    .top-drawers{
+        width: 100%;
+            height: rem(160);
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            object-position: 0 rem(-30);
+        }
+        .description{
+            width: 80%;
+            height: max-content;
+            // border: 1px solid blue;
+            margin: auto;
+            margin-top: .8rem;
+            flex-grow: 1;
+            
+            h1{
+                font-size: 14px;
+                padding-bottom: .5rem;
+                color: $veryGrayishBlue;
+            }
+            p{
+                font-size: 11px;
+                color: $veryGrayishBlue;
+                padding-right: 1rem;
+                line-height: 1rem;
+            }
+        }
+
+        footer{
+            position: relative;
+            width: 100%;
+            height: rem(60);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 13px;
+            // border: 1px solid red;
+            border-radius: 0 0 10px 10px;
+
+
+            .avatar-michelle{
+                width: rem(30);
+                height: rem(30);
+                border-radius: 50%;
+
+            }
+            .container{
+                width: 9rem;
+                display: flex;
+                flex-direction: column;
+
+                .name{
+                    // border: 1px solid blue;
+                    font-size: 11px;
+                    font-weight: 600;
+                    color: $veryGrayishBlue;
+                }
+                .date{
+                    // border: 1px solid blue;
+                    color: $veryGrayishBlue;
+                    opacity: 80%;
+                    padding-top: 2px;
+                    font-size: 9px;
+                }
+
+            }
+            button{
+                width: rem(23);
+                height: rem(23);
+                border-radius: 50%;
+                border: none;
+                margin-bottom: 5px;
+                .share{
+                    width: 11px;
+                    height: 11px;
+                }
+            }
+            .share-shown{
+                background-color: $veryGrayishBlue;
+                border-radius: 0 0 10px 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                pre{
+                    color: $grayishBlue;
+                    padding-right: 10px;
+                }
+                .invert{
+                    filter: invert(1);
+                    mix-blend-mode: difference;
+                    // fill: $lightGrayishBlue;
+                }
+            }
+        }
+
+    }
